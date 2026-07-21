@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colliara PetStore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo" aria-label="Inicio">
+                <img
+                    src="images/logo.png"
+                    class="logo-icon"
+                    alt="Logo ColliaraPet"
+                >
+                <span>Colliara PetStore</span>
+            </a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav
+                id="nav-menu"
+                class="nav-menu"
+                aria-label="Navegación principal"
+            >
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="services.html" class="nav-link">Servicios</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="store.html" class="nav-link">Tienda</a>
+                <a href="contact.html" class="nav-link">Contactos</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+       <div class="container-title">
+            <h1 class="title">Colliara Pet Store</h1>
+
+            <p class="subtitle">
+                Todo lo que necesitas para tus mascotas a los mejores precios
+            </p>
+
+            <p class="text">
+                Descubre nuestra amplia selección de productos para el bienestar
+                de tu mascota.
+            </p>
+        </div>
+
+        <div class="container-grid">
+
+            <section class="column">
+                <a href="services.html" class="card" aria-label="Servicios">
+                    <img
+                        src="images/grooming.png"
+                        class="card-image"
+                        alt="Grooming"
+                    >
+                    <span>Grooming</span>
+                </a>
+                
+                <a href="services.html" class="card">
+                    <img
+                        src="images/training.png"
+                        class="card-image"
+                        alt=""
+                    >
+                    <span>Entrenamiento</span>
+                </a>
+
+                <a href="services.html" class="card">
+                    <img
+                        src="images/walk.png"
+                        class="card-image"
+                        alt=""
+                    >
+                    <span>Paseos</span>
+                </a>
+            </section>
+
+            <section class="column">
+                <p class="title">Adopta un perrito</p>
+                <div class="contenedorCarousel">
+                    <button class="boton carouselBtnIzq" id="carruselBotonIzquierda">&#10094;</button>
+                        <div class="carruselTracker" id="contDeImg">
+                            <div class="deslizar img1"><img src="images/Adop1.png" alt="Imagen 1"></div>
+                            <div class="deslizar img2"><img src="images/Adop2.png" alt="Imagen 2"></div>
+                            <div class="deslizar img3"><img src="images/Adop3.png" alt="Imagen 3"></div>
+                        </div>
+                    <button class="boton carouselBtnDer" id="carruselBotonDerecha">&#10095;</button>
+                </div>
+            </section>
+
+            <section class="column">
+                <div class="card">
+                    <img
+                        src="images/food.png"
+                        class="card-image"
+                        alt="Alimento MUTT de 250 gramos"
+                    >
+
+                    <div class="reftext">
+                        <span>MUTT 250g</span>
+                        <p>Alimento cocido para perro 100% natural, clean label. Sin conservadores, colorantes, saborizantes o gluten.
+                        </p>
+                    </div>
+                
+                    <div class="rating" aria-label="Calificación: 4 de 5 estrellas">
+                    <span class="star active">★</span>
+                    <span class="star active">★</span>
+                    <span class="star active">★</span>
+                    <span class="star active">★</span>
+                    <span class="star">★</span>
+
+                    <span class="rating-number">4.0</span>
+                     </div>
+
+                    <a href="store.html" class="bbuy" aria-label="Comprar MUTT 250g">
+                    Comprar ahora
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
