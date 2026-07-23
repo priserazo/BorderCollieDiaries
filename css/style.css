@@ -1,39 +1,29 @@
-:root {    
-    /* Fondos */
+:root {
     --color-bg: #FDF5E4;
     --color-header: #FDF5E4;
     --color-surface: #FFF9EE;
     --color-container: #FFF9EE;
-
-    /* Bordes */
     --color-border: #E8D8BD;
-
-    /* Texto */
     --color-text: #042838;
     --color-subtitle: #55545B;
     --color-muted: #85817D;
-
-    /* Colores principales de la página */
-    --primary-color: #042838;      /* Azul oscuro de los títulos */
-    --secondary-color: #F29913;    /* Naranja del subtítulo */
-    --tertiary-color: #E85C48;     /* Coral de botones y figuras */
-
-    /* Estados hover */
+    --primary-color: #042838;
+    --secondary-color: #F29913;
+    --tertiary-color: #E85C48;
     --secondary-hover: #D9840D;
     --tertiary-hover: #CE4938;
-
-    /* Sombras */
     --shadow: 0 12px 30px rgba(93, 69, 39, 0.12);
-
-    /* Tamaño máximo */
     --container: 1200px;
 }
+
+/* ESTILOS GENERALES */
 
 html,
 body {
     margin: 0;
     min-height: 100%;
     background-color: var(--color-bg);
+    font-family: "Inter", sans-serif;
 }
 
 * {
@@ -42,178 +32,234 @@ body {
 
 body {
     margin: 0;
+    color: var(--color-text);
 }
 
 a {
-    color: #111827;
+    color: var(--color-text);
     text-decoration: none;
 }
 
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: var(--color-header);
-    border-top: 3px var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+img {
+    max-width: 100%;
 }
 
-.header-content {
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    position: relative;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    white-space: nowrap;
-}
-
-.logo-icon {
-    display: grid;
-    place-items: center;
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: var(--secondary-hover);
-}
-
-@media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .nav-menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        width: auto;
-        padding: 0;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .container-grid{
-        grid-template-columns: 1fr;
-    }
-
-    .column {
-        max-width: 500px;
-     margin-inline: auto;
-    }
-}
-
-.nav-menu {
-    display: none;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.nav-link {
-    padding: 0.75rem 0.9rem;
-    color: var(--color-subtitle);
-    font-weight: 400;
-    border-radius: 12px;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-text);
-}
+/* CONTENEDOR GENERAL */
 
 .container {
     width: calc(100% - 2rem);
     max-width: var(--container);
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
 }
 
+
+/* HEADER */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--color-header);
+    border-top: 3px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    min-height: 70px;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.logo span {
+    font-family: "Changa One", sans-serif;
+    font-size: 1.4rem;
+}
+
+.logo-icon {
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+    background-color: var(--secondary-hover);
+}
+
+/* BOTÓN HAMBURGUESA*/
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.35rem 0.6rem;
+
+    color: var(--color-text);
+    background: transparent;
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    font-size: 1.7rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.menu-toggle:hover {
+    background-color: var(--color-surface);
+}
+
+/* MENÚ MÓVIL */
+
+.nav-menu {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 1rem;
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-link {
+    display: block;
+
+    padding: 0.75rem 0.9rem;
+
+    color: var(--color-subtitle);
+
+    font-weight: 400;
+
+    border-radius: 12px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+
+/* TÍTULOS */
+
 .container-title {
-    text-align: center;
     padding-block: 2rem;
+    text-align: center;
 }
 
 .title {
-    color: var(--color-text);
     margin: 0 0 0.25rem;
+    color: var(--color-text);
+    font-family: "Changa One", sans-serif;
+    letter-spacing: 0.03em;
 }
 
 .subtitle {
-    color: var(--secondary-color);
-    font-style: italic;
     margin: 0 0 0.25rem;
-    margin: 0;
+    color: var(--secondary-color);
+    font-family: "Archivo Black", sans-serif;
+    font-style: italic;
 }
 
-.text {
-    font-size: small;
+.carousel-title {
+    margin: 0 0 1rem;
+    color: var(--tertiary-color);
+    font-family: "Changa One", sans-serif;
+    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.02em;
 }
+.text {
+    margin: 0;
+    font-size: small;
+    color: var(--color-subtitle);
+}
+
+
+/* GRID PRINCIPAL */
 
 .container-grid {
-    /*display: grid;
-    grid-template-columns: 250px minmax(0, 1fr) 250px;
-    gap: 2rem;
-    align-items: stretch;*/
-
     display: grid;
-    grid-template-columns:
-    minmax(180px, 220px)
-    minmax(300px, 650px)
-    minmax(180px, 220px);
-
+    grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
 
-    gap: clamp(1rem, 3vw, 3rem);
+    gap: 1.5rem;
 
     width: calc(100% - 2rem);
     max-width: 1200px;
+
     margin: 0 auto;
     padding: 1rem;
-
-    
 }
 
 .column {
     display: grid;
-    width: 100%;
-    min-width: 0;
-    gap: 1rem;
     align-content: center;
     justify-items: center;
+
+    gap: 1rem;
+
+    width: 100%;
+    min-width: 0;
+    max-width: 500px;
+
+    margin-inline: auto;
 }
+
+/* TARJETAS */
 
 .card {
     display: grid;
     place-items: center;
+
     gap: 0.4rem;
 
     width: 100%;
     min-width: 0;
     min-height: clamp(100px, 12vw, 160px);
+
     padding: clamp(0.4rem, 1vw, 0.8rem);
 
     border-radius: 12px;
+
     font-size: clamp(0.75rem, 1vw, 0.95rem);
     text-align: center;
 }
@@ -228,84 +274,121 @@ a {
     object-fit: contain;
 }
 
+
+/* CARRUSEL */
+
 .contenedorCarousel {
     position: relative;
+
     display: flex;
     align-items: center;
 
     width: 100%;
     max-width: 650px;
-    height: clamp(250px, 30vw, 400px);
+    height: clamp(250px, 60vw, 400px);
 
     margin: 1rem auto;
+
     overflow: hidden;
+
     border-radius: 12px;
 }
 
-.boton{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #00000080;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
-    border-radius: 10%;
-}
+.carrouselTracker {
+    display: flex;
 
-.carouselBtnIzq{
-    left: 0.5rem;
-}
-
-.carouselBtnDer{
-    right: 0.5rem;
-}
-
-.boton:hover{
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-
-.deslizar{
-    min-width: 100%;
-    height: 100%;
-    flex: 0 0 100%;
-}
-
-.deslizar img{
     width: 100%;
     height: 100%;
+
+    transition: transform 0.4s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: contain;
     object-position: center;
 }
 
-.carruselTracker{
-    display:flex;
-    height:100%;
-    transition: transform 0.4s ease;
+
+/* BOTONES DEL CARRUSEL */
+
+.boton {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    padding: 10px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border: none;
+    border-radius: 10%;
+
+    cursor: pointer;
 }
 
-.reftext{
-    font-weight: bold;
+.carouselBtnIzq {
+    left: 0.5rem;
+}
+
+.carouselBtnDer {
+    right: 0.5rem;
+}
+
+.boton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* PRODUCTO Y REFERENCIAS */
+
+.reftext {
     color: var(--tertiary-color);
+    font-weight: bold;
 }
 
 .reftext p {
     color: var(--color-subtitle);
     font-size: smaller;
+    font-weight: normal;
 }
 
-.bbuy{
-    background-color: var(--color-surface);
+.bbuy {
+    padding: 7px 17px;
+
     color: var(--color-subtitle);
+    background-color: var(--color-surface);
+
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    padding: 7px 17px;
+
     font-size: smaller;
+
     cursor: pointer;
 }
+
+.bbuy:hover {
+    color: white;
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+}
+
+
+/* RATING */
 
 .rating {
     display: flex;
@@ -324,6 +407,60 @@ a {
 
 .rating-number {
     margin-left: 6px;
+
     color: var(--color-subtitle);
+
     font-size: 14px;
+}
+
+
+/* TABLET Y ESCRITORIO */
+
+@media (min-width: 768px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .nav-link {
+        padding: 0.6rem 0.75rem;
+    }
+}
+
+
+/* GRID DE TRES COLUMNAS */
+
+@media (min-width: 900px) {
+
+    .container-grid {
+        grid-template-columns:
+            minmax(180px, 220px)
+            minmax(300px, 650px)
+            minmax(180px, 220px);
+
+        gap: clamp(1rem, 3vw, 3rem);
+    }
+
+    .column {
+        max-width: none;
+        margin-inline: 0;
+    }
+
+    .contenedorCarousel {
+        height: clamp(250px, 30vw, 400px);
+    }
 }
